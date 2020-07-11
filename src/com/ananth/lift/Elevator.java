@@ -1,6 +1,7 @@
 package com.ananth.lift;
 
 import static com.ananth.lift.Utils.DIRECTION.DOWN;
+import static com.ananth.lift.Utils.DIRECTION.UP;
 
 public class Elevator {
     private int currentFloorNumber = 0;
@@ -14,6 +15,7 @@ public class Elevator {
     public Elevator(String name, int numberOfFloors) {
         this.numberOfFloors = numberOfFloors;
         this.name = name;
+        this.direction = Utils.DIRECTION.UP;
     }
 
     public int goToFloor(int floor) {
@@ -23,6 +25,7 @@ public class Elevator {
             direction = Utils.DIRECTION.DOWN;
         }
         currentFloorNumber = floor;
+        System.out.printf("Lift %s is going to floor no %d\n", this.name, floor);
         return currentFloorNumber;
     }
 
